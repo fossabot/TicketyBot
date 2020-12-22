@@ -6,7 +6,7 @@ type TicketyConfig = {
 };
 
 export class TicketyClient extends Client {
-    commands = new Collection<never, never>();
+    commands = new Collection<any, any>();
     config: TicketyConfig;
 
     constructor(config: TicketyConfig) {
