@@ -25,7 +25,7 @@ export default {
                     allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "ADD_REACTIONS", "EMBED_LINKS", "ATTACH_FILES", "READ_MESSAGE_HISTORY", "USE_EXTERNAL_EMOJIS"]
                 }],
             });
-            message.channel.send(`Your ticket has been created at ${ticket}`);
+            message.channel.send(`✅ Your ticket has been created at ${ticket}`);
         }
         catch (err) {
             console.error(err);
