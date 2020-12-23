@@ -15,10 +15,10 @@ export default {
                     deny: ["VIEW_CHANNEL"],
                 }, {
                     id: message.author.id,
-                    allow: ["VIEW_CHANNEL", "SEND_MESSAGES"]
+                    allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "ADD_REACTIONS", "EMBED_LINKS", "ATTACH_FILES", "READ_MESSAGE_HISTORY", "USE_EXTERNAL_EMOJIS"]
                 }, {
                     id: config.support_role,
-                    allow: ["VIEW_CHANNEL", "SEND_MESSAGES"]
+                    allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "ADD_REACTIONS", "EMBED_LINKS", "ATTACH_FILES", "READ_MESSAGE_HISTORY", "USE_EXTERNAL_EMOJIS"]
                 }],
             });
             message.channel.send(`Your ticket has been created at ${ticket}`);
