@@ -17,6 +17,16 @@ for (const file of commandFiles) {
     console.log(`${file} loaded`);
 }
 
+// Verify NodeJS Version
+const REQUIRED_NODE_VERSION = "15.0.0";
+const requiredParts = REQUIRED_NODE_VERSION.split(".").map(v => parseInt(v, 10));
+const actualVersionParts = process.versions.node.split(".").map(v => parseInt(v, 10));
+for (const [i, part] of actualVersionParts.entries()) {
+    if (part > requiredParts[i]) break;
+    if (part === requiredParts[i]) break;
+    throw new Error(`Error: Unsupported Node.js version! Must be at least ${REQUIRED_NODE_VERSION}`);
+}
+
 // Ready Event
 client.once("ready", () => {
    console.log(`Logged in as ${client.user?.tag ?? ""}`);
