@@ -12,10 +12,13 @@ export default {
                 type: "text",
                 permissionOverwrites: [{
                     id: message.guild.id,
-                    deny: ['VIEW_CHANNEL'],
+                    deny: ["VIEW_CHANNEL"],
                 }, {
                     id: message.author.id,
-                    allow: ['VIEW_CHANNEL', 'SEND_MESSAGES']
+                    allow: ["VIEW_CHANNEL", "SEND_MESSAGES"]
+                }, {
+                    id: config.support_role,
+                    allow: ["VIEW_CHANNEL", "SEND_MESSAGES"]
                 }],
             });
             message.channel.send(`Your ticket has been created at ${ticket}`);
