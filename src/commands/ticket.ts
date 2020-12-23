@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
+import {logCommandExecutes} from "../utils/logCommandExecutes";
+
 const config = require("../../config");
 
 export default {
@@ -26,6 +29,7 @@ export default {
                 }],
             });
             message.channel.send(`✅ Your ticket has been created at ${ticket}`);
+            logCommandExecutes(message, `Ticket ${ticket} has been created by ${message.author.tag}`);
         }
         catch (err) {
             console.error(err);
