@@ -11,7 +11,7 @@ export default {
     async execute(client:any, message:any, args:any) {
         try {
             let reason = args.slice(0).join(" ");
-            if (!reason || reason === undefined || reason === null || reason === "") reason = "No Reason Specified";
+            if (!reason || reason === "") reason = "No Reason Specified";
 
             const ticket = await message.guild.channels.create(`ticket-${message.author.id}`, {
                 parent: config.ticket_parent,
