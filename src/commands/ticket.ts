@@ -8,17 +8,18 @@ export default {
     name: "ticket",
     description: "Create a new ticket",
     aliases: ["new"],
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async execute(client:TicketyClient, message:Message, args:ReadonlyArray<string>) {
         try {
             let reason = args.slice(0).join(" ");
             if (!reason || reason === "") reason = "No Reason Specified";
 
-            const ticket = await message.guild!.channels.create(`ticket-${message.author.id}`, {
+            const ticket = await message.guild?.channels.create(`ticket-${message.author.id}`, {
                 parent: config.ticket_parent,
                 type: "text",
                 topic: `Reason: ${reason}`,
                 permissionOverwrites: [{
-                    id: message.guild!.id,
+                    id: message.guild?.id,
                     deny: ["VIEW_CHANNEL"],
                 }, {
                     id: message.author.id,
