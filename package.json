@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "build": "tsc -p .",
-    "lint": "eslint '**/*.{js,ts,tsx}'",
-    "lint:fix": "npm run lint -- -fix",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "test": "jest",
     "test:coveralls": "jest --coverage && coveralls < coverage/lcov.info\n"
   },
