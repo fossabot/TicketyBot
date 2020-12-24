@@ -2,9 +2,10 @@
 const config = require("../config");
 import { readdirSync } from "fs";
 import { join } from "path";
+import { Message } from "discord.js";
 import { TicketyClient } from "./struct/Client";
 import { checkConfigTypes } from "./utils/checkConfigTypes";
-const client = new TicketyClient({
+const client:TicketyClient = new TicketyClient({
     token: config.token,
     prefix: config.prefix,
 });
@@ -48,7 +49,7 @@ client.once("ready", () => {
 });
 
 // Message Event
-client.on("message", message => {
+client.on("message", (message:Message) => {
    if (!message.content.startsWith(client.config.prefix) || message.author.bot) return;
    const args = message.content.slice(client.config.prefix.length).split(/ +/);
    const commandName = args.shift()?.toLowerCase();
