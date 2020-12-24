@@ -9,7 +9,7 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "jest",
-    "test:coveralls": "jest --coverage && coveralls < coverage/lcov.info\n"
+    "test:coveralls": "jest --passWithNoTests --coverage && coveralls < coverage/lcov.info\n"
   },
   "repository": {
     "type": "git",
