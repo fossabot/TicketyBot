@@ -4,6 +4,9 @@
 </p>
 <p align="center">
     <a href="https://www.codefactor.io/repository/github/tommyshelby9121/ticketybot"><img src="https://www.codefactor.io/repository/github/tommyshelby9121/ticketybot/badge" alt="CodeFactor" /></a>
+    <a href="">
+        <img src="https://travis-ci.org/tommyshelby9121/TicketyBot.svg?branch=master" alt="">
+    </a>
 </p>
 <p align="center">
     <a href="https://discord.gg/DDR3W3Xqjg">View Demo</a>
