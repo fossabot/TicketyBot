@@ -51,7 +51,7 @@ client.once("ready", () => {
 client.on("message", message => {
    if (!message.content.startsWith(client.config.prefix) || message.author.bot) return;
    const args = message.content.slice(client.config.prefix.length).split(/ +/);
-   const commandName = args.shift()!.toLowerCase();
+   const commandName = args.shift()?.toLowerCase();
    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases && cmd.aliases.includes(commandName));
    if (!command) return;
    if (message.channel.type !== "text") return;
