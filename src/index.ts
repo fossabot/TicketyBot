@@ -3,6 +3,7 @@ const config = require("../config");
 import { readdirSync } from "fs";
 import { join } from "path";
 import { TicketyClient } from "./struct/Client";
+import { checkConfigTypes } from "./utils/checkConfigTypes";
 const client = new TicketyClient({
     token: config.token,
     prefix: config.prefix,
@@ -63,6 +64,9 @@ client.on("message", message => {
        process.exit(1);
    }
 });
+
+// Check Config Value Types
+checkConfigTypes(config);
 
 // Login
 client.login(client.config.token);
