@@ -1,6 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-// const config = require("../../config");
-
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
 export function checkConfigTypes(config:any) {
     if (typeof config.token !== "string") throw new TypeError("Token should be a type of String");
     if (typeof config.prefix !== "string") throw new TypeError("Prefix should be a type of String");
