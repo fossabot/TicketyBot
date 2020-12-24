@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any */
 const config = require("../../config");
 
 export function logCommandExecutes(message:any, data:string) {
